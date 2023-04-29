@@ -1,5 +1,6 @@
 package com.pryabykh.onetomanyassotiation.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -27,6 +28,7 @@ public class Petition implements Serializable {
 
     private String description;
 
+    @JsonIgnoreProperties({"petition", "user"})
     @OneToMany(mappedBy = "petition", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Signature> signatures = new ArrayList<>();
 
