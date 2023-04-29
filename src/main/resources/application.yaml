@@ -5,3 +5,7 @@ spring:
     username: "demo"
     password: "demo"
     type: com.zaxxer.hikari.HikariDataSource
+  liquibase:
+    liquibase-schema: public
+    default-schema: public
+    change-log: classpath:db/changelog/db.changelog-master.xml
